@@ -97,6 +97,13 @@ DIST1 / DIST2
 
 ## 5. 네트워크 검증
 
+### OSPF 동적 라우팅 검증
+
+![OSPF 라우팅 테이블](ospf-routing.png)
+
+CoreSwitch에서 `show ip route` 명령어를 실행하여
+OSPF로 학습된 경로(`O`)를 확인했습니다.
+
 GNS3 환경에서 Cisco IOS 명령어를 사용하여 구성 상태를 확인했습니다.
 
 ```bash
