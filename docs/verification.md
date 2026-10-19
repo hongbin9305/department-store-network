@@ -10,7 +10,7 @@
 | OSPF 학습 경로 | 저장소 `ospf-routing.png`의 Core `show ip route` 출력 | 캡처 확인 |
 | VLAN/IP 계획 | 실습 트러블슈팅 매뉴얼의 최종 Address Plan | 설정 기록 |
 | DHCP Relay/서버 설정 | `ip helper-address`, 서버 `dhcpd.conf`의 scope 기록 | 설정 기록 |
-| DHCP 자동 IP 할당 | 매뉴얼의 VLAN 30·70 성공 기록 | 문서 기록 (결과 캡처 미첨부) |
+| DHCP 자동 IP 할당 | `evidence/dhcp-vlan30-2026-10-19.png`의 VLAN 30 `ipconfig /all`, 당시 VLAN 30·70 매뉴얼 | VLAN 30 실제 캡처 확인 / VLAN 70은 당시 기록 |
 | Core–HQ Transit 변경 | `192.168.40.12/30` 변경 이력 | 문서 기록 |
 
 ## 2. 프로젝트 재실행 시 확인할 항목
@@ -24,13 +24,14 @@
 - [ ] 게이트웨이, Inter-VLAN PC, DIST–Core Transit Ping
 - [ ] `show ip ospf neighbor` FULL 및 `show ip route`의 OSPF 학습 경로 확인
 - [ ] Rocky Linux `dhcpd -t`, `systemctl status dhcpd` 확인
-- [ ] DHCP 클라이언트 `ipconfig /all`로 실제 VLAN 주소·서브넷·게이트웨이 확인 후 **캡처 추가**
+- [x] **VLAN 30** 테스트 클라이언트의 `ipconfig /all`에서 `10.10.9.10/26`, 게이트웨이 `10.10.9.1`, DHCP 서버 `10.10.20.10` 및 임대 확인 — 2026-10-19 캡처 추가
+- [ ] **나머지 VLAN**의 DHCP 임대 및 전체 통신 경로는 별도 검증
 - [ ] Core–HQ Transit 주소 중복 및 WAN 연결 확인
 - [ ] `DUP_RTRID_AREA`/`FLOOD_WAR` 관련 Router ID 중복 경고 제거 여부 재확인
 
 ## 3. 자료의 한계
 
 - `.gns3` 파일에는 노드·링크 등 토폴로지 메타데이터가 있지만, **실행 가능한 전체 VM 이미지·Cisco 장비 설정이 모두 포함되었다고 볼 수 없습니다.**
-- DHCP 성공은 당시 작성된 기록으로 확인되지만, 현재 저장소에는 IP 할당을 보여주는 독립 클라이언트 캡처가 없습니다.
+- **VLAN 30**은 2026-10-19 새로 확보한 클라이언트 캡처로 DHCP 임대를 확인했습니다. 다른 VLAN의 현재 주소 할당과 전체 기능은 재검증하지 않았습니다.
 - OSPF 라우팅 경로 캡처는 존재하지만 **전 구간의 장애 없는 상용 서비스 운영을 의미하지 않습니다.**
 - 이 프로젝트는 **교육용 가상환경**에서 수행했습니다.
