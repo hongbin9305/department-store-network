@@ -1,3 +1,9 @@
+> **STK 보안 솔루션 SE 지원용 브랜치** · 기존 교육 프로젝트의 원본과 증빙을 유지하면서 고객 환경 파악, 장애 분리, 검증 근거 중심으로 정리했습니다.  
+> **[STK SE 포트폴리오 요약 및 보안 프로젝트 연결 보기](docs/stk-security-se-portfolio.md)** · **[별도 BYTE BACK 인증·접근통제 프로젝트](https://github.com/hongbin9305/choi-bujang-secret-vault)**  
+> 이 저장소는 교육용 가상 환경에서 수행한 강남점 네트워크 프로젝트이며, 상용 구축·고객사 PoC 경험을 의미하지 않습니다.
+
+---
+
 # 백화점 통합 네트워크 인프라 구축 | 강남점 담당
 
 > **GNS3·Cisco IOS·Rocky Linux 기반 교육용 팀 프로젝트**  
